@@ -1,0 +1,87 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    background-color: #18191A;
+    color: #E4E6EB;
+    margin: 0;
+    padding: 0;
+}
+h2 {
+    color: white;
+}
+
+.contacts-container {
+    max-width: 300px;
+    margin: 20px auto;
+    background-color: #242526;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.contacts-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #323436;
+}
+
+    .contacts-header h2 {
+        margin: 0;
+        font-size: 1.2em;
+    }
+
+.header-icons {
+    display: flex;
+    gap: 15px;
+}
+
+    .header-icons span {
+        cursor: pointer;
+    }
+
+.contacts-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-bottom: 1px solid #3A3B3C;
+}
+
+    .contact-item:last-child {
+        border-bottom: none;
+    }
+
+.contact-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.contact-name {
+    font-size: 0.9em;
+    color: white;
+}
+
+.contact-item {
+    list-style: none;
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit text color */
+    padding: 10px; /* Add some padding */
+    width: 100%; /* Make the anchor the full width */
+}
+
+.contact-item:hover {
+    background-color: #f0f0f0; /* Change background on hover */
+}

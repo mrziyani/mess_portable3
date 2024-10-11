@@ -1,0 +1,36 @@
+﻿@page "/ListeUser"
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User List with Status</title>
+</head>
+
+<div class="container">
+    @foreach (var p in users)
+    {
+        <div class="item">
+            <span class="item-name">@p.UserPrenom @p.UserName</span>
+
+            @if (p.etat == true)
+            {
+                <span class="item-status">Friend</span>
+            }
+            else if (p.etat == null)
+            {
+                <button @onclick="() => SendFR(p.IdUser)" class="btn btn-primary">Send FR</button>
+            }
+            else if (p.etat == false)
+            {
+                if (p.Idemet == id1)
+                {
+                    <button class="btn btn-secondary" disabled>FR Sent</button>
+                }
+                else
+                {
+                    <button @onclick="() => AcceptFR(p.Id)" class="btn btn-success">Accept FR @p.Id</button>
+                    <button @onclick="() => DeclineFR(p.Id)" class="btn btn-danger">Decline FR @p.Id</button>
+                }
+            }
+        </div>
+    }
+</div>

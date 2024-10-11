@@ -1,0 +1,57 @@
+﻿@page "/Conversation/{id}"
+
+
+<h3>User Profile</h3>
+<div class="chat-container">
+    <div class="chat-header">
+        <span class="user-name">@userName</span>
+        <span>⋮</span>
+    </div>
+    <div class="chat-messages" @ref="chatMessagesRef">
+        @foreach (var p in convs)
+        {
+            if (p.IdEmet == idemet)
+            {
+                <div class="message sent">
+                    <div class="message-content">@p.Message</div>
+                    <div class="timestamp">@p.Timestamp.ToString("HH:mm")</div>
+                </div>
+            }
+            else
+            {
+                <div class="message received">
+                    <div class="message-content">@p.Message</div>
+                    <div class="timestamp">@p.Timestamp.ToString("HH:mm")</div>
+                </div>
+            }
+        }
+        @if (convs.Count > 0 && convs.Last().IdRec == id && convs.Last().Etat == 1)
+        {
+            <div class="message sent">
+                <div class="seen-mark">✔️ seen</div>
+            </div>
+        }
+    </div>
+    <div class="chat-input">
+        <input type="text" id="messageInput" @bind="newMessage" @bind:event="oninput" @onkeypress="HandleKeyPress" placeholder="Aa" />
+
+        <div class="icons">
+            <button @onclick="SendMessage" type="button" class="btn btn-primary">Send</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    window.scrollToBottom = function (element) {
+        if (element) {
+            element.scrollTop = element.scrollHeight;
+        } else {
+            console.warn("Element reference is null. Cannot scroll.");
+        }
+    }
+</script>
+
+
+@code {
+    private ElementReference chatMessagesRef;
+}

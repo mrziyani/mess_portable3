@@ -1,0 +1,32 @@
+﻿@page "/ListeFriends"
+
+<h3>ListeFriends</h3>
+
+<div class="contacts-container">
+
+    <div class="contacts-header">
+        <h2>Contacts</h2>
+
+        <div class="header-icons">
+            <span class="search-icon">🔍</span>
+            <span class="more-icon">⋮</span>
+        </div>
+    </div>
+
+    <ul class="contacts-list">
+        @foreach (var p in users)
+        {
+            <li class="contact-item">
+                <a href="@($"/Conversation/{p.Id}")" class="contact-link">
+                    <img src="https://via.placeholder.com/40" alt="ok" class="contact-avatar">
+                    <span class="contact-name">@p.Nom @p.Prenom</span>
+                </a>
+            </li>
+        }
+        <!-- Add more list items for other contacts -->
+    </ul>
+</div>
+
+<style>
+    
+</style>

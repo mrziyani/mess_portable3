@@ -1,0 +1,18 @@
+﻿@page "/"
+
+
+
+<h3>Login</h3>
+
+<div class="login-container">
+    <input type="text" placeholder="Adresse e-mail ou numéro de tél." @bind="emailOrPhone">
+    <input type="password" placeholder="Mot de passe" @bind="password">
+    <button class="login-button" @onclick="Login">Se connecter</button>
+    <a href="#" class="forgot-password">Mot de passe oublié ?</a>
+    <div class="divider"></div>
+    <button  class="create-account-button">Créer nouveau compte</button>
+</div>
+
+@code {
+    
+}

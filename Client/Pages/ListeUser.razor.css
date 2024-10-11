@@ -1,0 +1,38 @@
+﻿.container {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+    .item:last-child {
+        border-bottom: none;
+    }
+
+.item-name {
+    font-size: 18px;
+    color: #333;
+}
+
+.item-count {
+    background-color: #673ab7;
+    color: white;
+    width: 100px; /* Width remains the same */
+    height: 25px; /* Height remains the same */
+    border-radius: 5px; /* Adjusted for rounded corners, or set to 0 for sharp corners */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+}
